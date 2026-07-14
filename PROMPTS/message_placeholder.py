@@ -1,3 +1,5 @@
+import os
+
 from model_loader import model
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 # chat template
@@ -9,7 +11,7 @@ chat_template =  ChatPromptTemplate([
 
 chat_history = []
 # load chat history
-with open(r'C:\Users\AkhandChauhan\Desktop\LANGCHAIN\LANGCHAIN PROMPTS\chat_history.txt') as f:
+with open(os.path.join(os.path.dirname(__file__), 'chat_history.txt')) as f:
     chat_history.extend(f.readlines())
 
 # create prompt
